@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przewodnik turystyczny · Lux Apartament Sunny Spain</title>
+  <meta name="description" content="Co zobaczyć w okolicach Los Alcázares? Przewodnik po najpiękniejszych miejscach Costa Cálida i Costa Blanca — Cabo de Palos, Calblanque, Kartagena, Alicante, Calpe, Benidorm, Elche.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Guide page --- */
+    .guide-hero {
+      padding: calc(var(--nav-h) + 64px) 0 64px;
+      text-align: center;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .guide-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      color: var(--teal);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .guide-hero-sub {
+      color: var(--text-light);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+    }
+
+    /* --- Map --- */
+    .guide-map-section {
+      padding: 64px 0;
+    }
+    .guide-map-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .guide-map-placeholder {
+      width: 100%;
+      height: 420px;
+      background: var(--off-white);
+      border-radius: 16px;
+      border: 1.5px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--text-light);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      margin-top: 16px;
+    }
+    .guide-map-placeholder-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+    .guide-map-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* --- Sections --- */
+    .guide-section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+    }
+    .guide-section-header {
+      margin-bottom: 40px;
+    }
+    .guide-section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .guide-section-header h2 {
+      color: var(--text-dark);
+      font-weight: 300;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    }
+    .guide-section-desc {
+      margin-top: 10px;
+      color: var(--text);
+      max-width: 600px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* --- Place grid --- */
+    .place-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .place-grid--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 1100px) {
+      .place-grid--4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .place-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .place-grid,
+      .place-grid--4 { grid-template-columns: 1fr; }
+    }
+
+    /* --- Place card --- */
+    .place-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .place-card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+      background: var(--off-white);
+      flex-shrink: 0;
+    }
+    .place-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .place-card:hover .place-card-img img {
+      transform: scale(1.04);
+    }
+    .place-card-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .place-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(4px);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+    .place-card-body {
+      padding: 20px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .place-card-body h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .place-card-body p {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .place-highlights {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .place-highlights span {
+      font-size: 12px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      line-height: 1.4;
+    }
+    .place-highlights span::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    /* --- Gastronomy callout --- */
+    .gastro-callout {
+      background: var(--teal-light);
+      border-radius: 20px;
+      padding: 56px 48px;
+      text-align: center;
+      border: 1.5px solid rgba(90,140,139,0.15);
+    }
+    .gastro-callout h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--teal-dark);
+      margin: 12px 0 16px;
+    }
+    .gastro-callout p {
+      color: var(--text);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    @media (max-width: 600px) {
+      .gastro-callout { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      Lux Apartament <em>· Sunny Spain</em>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#apartament" data-pl="Apartament" data-en="Apartment" data-es="Apartamento">Apartament</a>
+      <a href="index.html#galeria" data-pl="Galeria" data-en="Gallery" data-es="Galería">Galeria</a>
+      <a href="index.html#udogodnienia" data-pl="Udogodnienia" data-en="Amenities" data-es="Comodidades">Udogodnienia</a>
+      <a href="index.html#okolica" data-pl="Okolica" data-en="Area" data-es="Entorno">Okolica</a>
+      <a href="index.html#rezerwacja" data-pl="Rezerwacja" data-en="Booking" data-es="Reservas">Rezerwacja</a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang-btn="pl">PL</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#apartament" data-pl="Apartament" data-en="Apartment" data-es="Apartamento">Apartament</a>
+    <a href="index.html#galeria" data-pl="Galeria" data-en="Gallery" data-es="Galería">Galeria</a>
+    <a href="index.html#udogodnienia" data-pl="Udogodnienia" data-en="Amenities" data-es="Comodidades">Udogodnienia</a>
+    <a href="index.html#okolica" data-pl="Okolica" data-en="Area" data-es="Entorno">Okolica</a>
+    <a href="index.html#rezerwacja" data-pl="Rezerwacja" data-en="Booking" data-es="Reservas">Rezerwacja</a>
+    <a href="https://wa.me/48603768661" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="guide-hero">
+  <div class="container">
+    <p class="guide-hero-eyebrow">Lux Apartament · Sunny Spain</p>
+    <h1 data-pl="Odkryj Costa Cálida" data-en="Discover Costa Cálida" data-es="Descubre la Costa Cálida">Odkryj Costa Cálida</h1>
+    <p class="guide-hero-sub" data-pl="Przewodnik po najpiękniejszych miejscach w okolicach Los Alcázares" data-en="A guide to the most beautiful places around Los Alcázares" data-es="Guía por los lugares más bellos alrededor de Los Alcázares">Przewodnik po najpiękniejszych miejscach w okolicach Los Alcázares</p>
+  </div>
+</section>
+
+<!-- ===================== MAPA ===================== -->
+<section class="guide-map-section">
+  <div class="container">
+    <p class="guide-map-label" data-pl="Mapa atrakcji" data-en="Map of attractions" data-es="Mapa de atracciones">Mapa atrakcji</p>
+    <iframe
+      src="https://www.google.com/maps/d/u/0/embed?mid=1PqRjrGey-Wn4Wq58AkgYskBiZoqK99c&ehbc=2E312F&noprof=1"
+      width="100%" height="480"
+      style="border:0; border-radius:16px; display:block; margin-top:16px;"
+      allowfullscreen loading="lazy"
+      title="Mapa atrakcji — Los Alcázares i okolice">
+    </iframe>
+  </div>
+</section>
+
+<!-- ===================== LOS ALCÁZARES ===================== -->
+<section class="guide-section">
+  <div class="container">
+    <div class="guide-section-header">
+      <span class="guide-section-eyebrow" data-pl="W mieście" data-en="In town" data-es="En la ciudad">W mieście</span>
+      <h2>Los Alcázares</h2>
+      <p class="guide-section-desc" data-pl="Spokojny kurort nad Mar Menor z 7 km plaż, promenadą i ciepłym, płytkim morzem — idealnym dla rodzin i dzieci." data-en="A peaceful resort on Mar Menor with 7 km of beaches, a promenade and warm, shallow sea — perfect for families and children." data-es="Un tranquilo resort junto al Mar Menor con 7 km de playas, un paseo marítimo y un mar cálido y poco profundo — ideal para familias con niños.">Spokojny kurort nad Mar Menor z 7 km plaż, promenadą i ciepłym, płytkim morzem — idealnym dla rodzin i dzieci.</p>
+    </div>
+    <div class="place-grid">
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/mar menor.jpeg" alt="Promenada i plaże Mar Menor">
+          <span class="place-badge">W mieście</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Promenada i plaże Mar Menor</h3>
+          <p>7 kilometrów palm wzdłuż spokojnych wód Mar Menor. Ciepłe, płytkie morze idealne dla rodzin z dziećmi — bez fal i prądów. Liczne kawiarnie, lody i zachody słońca prosto z plaży.</p>
+          <div class="place-highlights">
+            <span>Windsurfing, kitesurfing i kajakarstwo</span>
+            <span>Plaże idealne dla dzieci</span>
+            <span>Promenada z palmami i restauracjami</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/targ.jpg" alt="Targ wtorkowy">
+          <span class="place-badge">Każdy wtorek</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Targ wtorkowy</h3>
+          <p>Co wtorek ulice Los Alcázares zamieniają się w kolorowy targ z lokalnymi produktami, świeżymi owocami i warzywami, odzieżą i rękodziełem. Żywe centrum lokalnego życia.</p>
+          <div class="place-highlights">
+            <span>Świeże lokalne produkty</span>
+            <span>Rękodzieło i pamiątki</span>
+            <span>Autentyczna atmosfera</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/muzeum lotnictwa.jpg" alt="Muzeum Lotnictwa">
+          <span class="place-badge">W mieście</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Muzeum Lotnictwa</h3>
+          <p>Los Alcázares to kolebka hiszpańskiego lotnictwa — w 1913 roku powstała tu jedna z pierwszych baz lotniczych w Hiszpanii. Muzeum prezentuje zabytkowe samoloty i historię pionierów.</p>
+          <div class="place-highlights">
+            <span>Historia lotnictwa Hiszpanii</span>
+            <span>Zabytkowe samoloty i artefakty</span>
+            <span>Wyjątkowe miejsce dla entuzjastów</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COSTA CÁLIDA ===================== -->
+<section class="guide-section">
+  <div class="container">
+    <div class="guide-section-header">
+      <span class="guide-section-eyebrow" data-pl="Do 30 minut jazdy" data-en="Within 30 minutes" data-es="A 30 minutos">Do 30 minut jazdy</span>
+      <h2>Costa Cálida</h2>
+      <p class="guide-section-desc" data-pl="Dzikie klify, laguny i starożytna Kartagena — wszystko w zasięgu krótkiej przejażdżki." data-en="Wild cliffs, lagoons and ancient Cartagena — all within a short drive." data-es="Acantilados salvajes, lagunas y la antigua Cartagena — todo a un breve trayecto en coche.">Dzikie klify, laguny i starożytna Kartagena — wszystko w zasięgu krótkiej przejażdżki.</p>
+    </div>
+    <div class="place-grid place-grid--4">
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/cabo.webp" alt="Cabo de Palos">
+          <span class="place-badge">15 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Cabo de Palos</h3>
+          <p>Malownicza wioska rybacka z ikoniczną latarnią morską z 1864 roku. 18 plaż i zatok oraz Islas Hormigas — jedno z najlepszych miejsc do nurkowania w Europie.</p>
+          <div class="place-highlights">
+            <span>Latarnia morska z panoramą</span>
+            <span>Nurkowanie przy Islas Hormigas</span>
+            <span>Świeże owoce morza</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/la manga.jpg" alt="La Manga del Mar Menor">
+          <span class="place-badge">20 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>La Manga del Mar Menor</h3>
+          <p>Wąski pas lądu między ciepłą laguną Mar Menor a Morzem Śródziemnym. Z jednej strony spokojne wody do kąpieli, z drugiej wiatr idealny do sportów wodnych.</p>
+          <div class="place-highlights">
+            <span>Windsurfing i kitesurfing</span>
+            <span>Lecznicze błoto Mar Menor</span>
+            <span>Plaże z obu stron półwyspu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/calblanque.jpg" alt="Park Przyrody Calblanque">
+          <span class="place-badge">25 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Park Przyrody Calblanque</h3>
+          <p>2400 hektarów dzikiej natury i 13 km nieskażonego wybrzeża objętych ochroną. Wydmy, klify, dzikie plaże i szlaki piesze z widokiem na Morze Śródziemne.</p>
+          <div class="place-highlights">
+            <span>13 km dzikiego wybrzeża</span>
+            <span>Flamingi i ptaki drapieżne</span>
+            <span>Szlaki piesze na klify</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/kartagena.avif" alt="Kartagena">
+          <span class="place-badge">30 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Kartagena</h3>
+          <p>3000 lat historii w jednym miejscu — architektura punicka, rzymska i arabska. Doskonale zachowany teatr rzymski z I w. n.e., muzea i piękne stare miasto z tarasami widokowymi.</p>
+          <div class="place-highlights">
+            <span>Teatr Rzymski (ok. 6€)</span>
+            <span>Muzeum Archeologiczne</span>
+            <span>Stare miasto i port</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WYCIECZKI JEDNODNIOWE ===================== -->
+<section class="guide-section">
+  <div class="container">
+    <div class="guide-section-header">
+      <span class="guide-section-eyebrow" data-pl="Wycieczki jednodniowe" data-en="Day trips" data-es="Excursiones de un día">Wycieczki jednodniowe</span>
+      <h2 data-pl="Costa Blanca i okolice" data-en="Costa Blanca &amp; beyond" data-es="Costa Blanca y alrededores">Costa Blanca i okolice</h2>
+      <p class="guide-section-desc" data-pl="Alicante, Elche, Calpe i Benidorm — każde z tych miejsc to pełnowartościowy dzień wycieczki." data-en="Alicante, Elche, Calpe and Benidorm — each one a full day of discovery." data-es="Alicante, Elche, Calpe y Benidorm — cada uno merece un día completo de visita.">Alicante, Elche, Calpe i Benidorm — każde z tych miejsc to pełnowartościowy dzień wycieczki.</p>
+    </div>
+    <div class="place-grid place-grid--4">
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/alicante.jpg" alt="Alicante">
+          <span class="place-badge">1h jazdy</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Alicante</h3>
+          <p>Tętniące życiem miasto portowe z zamkiem Santa Bárbara górującym nad całą zatoką. Elegancka promenada Explanada, stare miasto z barami tapas i długa miejska plaża Postiguet.</p>
+          <div class="place-highlights">
+            <span>Zamek Santa Bárbara — widok na zatokę</span>
+            <span>Promenada Explanada de España</span>
+            <span>Stare miasto i tapas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/elche.jpeg" alt="Elche">
+          <span class="place-badge">1h 10 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Elche</h3>
+          <p>Miasto z podwójnym wpisem na listę UNESCO. Największy gaj palmowy w Europie liczący pół miliona palm daktylowych, założony przez Arabów ponad tysiąc lat temu.</p>
+          <div class="place-highlights">
+            <span>Palmeral de Elche — UNESCO</span>
+            <span>Bazylika Santa María</span>
+            <span>Ogród Księdza — Huerto del Cura</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/calpe.webp" alt="Calpe">
+          <span class="place-badge">1h 30 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Calpe</h3>
+          <p>Urocze miasto zdominowane przez Peñón de Ifach — 332-metrową skałę wapienną unoszącą się prosto z morza. Wejście na szczyt nagradza jednym z najpiękniejszych widoków na Costa Blanca.</p>
+          <div class="place-highlights">
+            <span>Peñón de Ifach — wejście darmowe</span>
+            <span>Las Salinas — jezioro z flamingami</span>
+            <span>Restauracje z owocami morza</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/benidorm.jpg" alt="Benidorm">
+          <span class="place-badge">1h 30 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Benidorm</h3>
+          <p>Kultowe centrum rozrywki Costa Blanca z dwiema szerokimi plażami i pełną ofertą dla rodzin. Aqualandia z ekstremalnymi zjeżdżalniami, Terra Mítica i Mundomar to raj dla dzieci.</p>
+          <div class="place-highlights">
+            <span>Aqualandia — największy park wodny Costa Blanca</span>
+            <span>Terra Mítica — park rozrywki</span>
+            <span>Dwie długie piaszczyste plaże</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SPORT ===================== -->
+<section class="guide-section">
+  <div class="container">
+    <div class="guide-section-header">
+      <span class="guide-section-eyebrow" data-pl="Aktywny wypoczynek" data-en="Active holidays" data-es="Vacaciones activas">Aktywny wypoczynek</span>
+      <h2 data-pl="Sport i przygoda" data-en="Sport &amp; adventure" data-es="Deporte y aventura">Sport i przygoda</h2>
+      <p class="guide-section-desc" data-pl="Costa Cálida to raj dla aktywnych — od spokojnych wód Mar Menor po dzikie szlaki Calblanque." data-en="Costa Cálida is a paradise for active travellers — from the calm waters of Mar Menor to the wild trails of Calblanque." data-es="La Costa Cálida es un paraíso para los viajeros activos — desde las tranquilas aguas del Mar Menor hasta los senderos salvajes de Calblanque.">Costa Cálida to raj dla aktywnych — od spokojnych wód Mar Menor po dzikie szlaki Calblanque.</p>
+    </div>
+    <div class="place-grid">
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/windsurfing.jpg" alt="Sporty wodne">
+          <span class="place-badge">Mar Menor</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Sporty wodne</h3>
+          <p>Spokojne, ciepłe wody Mar Menor to idealne warunki dla początkujących i zaawansowanych. Wypożyczalnie sprzętu znajdziesz wzdłuż całej promenady w Los Alcázares.</p>
+          <div class="place-highlights">
+            <span>Windsurfing i kitesurfing</span>
+            <span>Kajakarstwo i SUP (paddleboarding)</span>
+            <span>Jet ski i żeglarstwo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/snorkeling.webp" alt="Nurkowanie i snorkeling">
+          <span class="place-badge">Cabo de Palos · 15 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Nurkowanie i snorkeling</h3>
+          <p>Rezerwat morski Islas Hormigas przy Cabo de Palos to jedno z najpiękniejszych miejsc do nurkowania w całej Europie. Krystalicznie czysta woda, kolorowe rafy i bogactwo życia podwodnego.</p>
+          <div class="place-highlights">
+            <span>Islas Hormigas — rezerwat morski</span>
+            <span>Lokalne centrum nurkowe z instruktorami</span>
+            <span>Snorkeling dostępny dla każdego</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/golf.webp" alt="Golf">
+          <span class="place-badge">Okolica</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Golf</h3>
+          <p>Okolice Los Alcázares to jedno z najlepszych miejsc golfowych w Hiszpanii. Kilka prestiżowych pól w zasięgu kilkunastu minut jazdy, czynnych przez cały rok dzięki łagodnemu klimatowi.</p>
+          <div class="place-highlights">
+            <span>Roda Golf &amp; Beach Resort</span>
+            <span>La Serena Golf</span>
+            <span>Łagodny klimat — gra przez cały rok</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/trasy piesze.webp" alt="Piesze wędrówki">
+          <span class="place-badge">Calblanque · 25 min</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Piesze wędrówki</h3>
+          <p>Park Przyrody Calblanque oferuje kilka szlaków różnej trudności. Trasa na Monte de las Cenizas (307 m n.p.m.) nagradza panoramicznym widokiem na morze i rezerwat przyrody.</p>
+          <div class="place-highlights">
+            <span>Monte de las Cenizas — punkt widokowy</span>
+            <span>Szlaki wśród klifów i wydm</span>
+            <span>Obserwacja flamingów i ptaków</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-card-img">
+          <img src="zdjęcia/rower.jpg" alt="Rower">
+          <span class="place-badge">Los Alcázares</span>
+        </div>
+        <div class="place-card-body">
+          <h3>Rower</h3>
+          <p>Płaski teren i łagodny klimat sprawiają, że rower to jeden z najprzyjemniejszych sposobów odkrywania okolicy. Trasy biegną wzdłuż wybrzeża Mar Menor z widokiem na morze.</p>
+          <div class="place-highlights">
+            <span>Trasy wzdłuż promenady</span>
+            <span>Wypożyczalnie rowerów w mieście</span>
+            <span>Płaski teren — idealne dla każdego</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WYCIECZKI Z PRZEWODNIKIEM ===================== -->
+<section class="guide-section">
+  <div class="container">
+    <div style="background: var(--teal); border-radius: 20px; padding: 48px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 260px;">
+        <span style="display:block; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:10px;">Usługi dodatkowe</span>
+        <h2 style="color:#fff; font-weight:300; font-size:clamp(1.4rem, 2.5vw, 2rem); margin-bottom:16px;">Wycieczki z polskim przewodnikiem</h2>
+        <p style="color:rgba(255,255,255,0.82); font-size:14px; line-height:1.75; margin-bottom:20px;">Chętnie pomożemy zorganizować wycieczkę z polskojęzycznym przewodnikiem do Alicante, Calpe, Benidormu, Elche czy Kartageny. Oferujemy również pomoc w wynajmie samochodu na czas pobytu.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="https://wa.me/48603768661" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; height:40px; padding:0 20px; background:#fff; color:var(--teal-dark); font-size:12px; font-weight:500; letter-spacing:0.08em; border-radius:4px; white-space:nowrap;">
+            Zapytaj na WhatsApp
+          </a>
+          <a href="https://m.me/61567027174427" target="_blank" rel="noopener"
+             style="display:inline-flex; align-items:center; height:40px; padding:0 20px; background:rgba(255,255,255,0.15); color:#fff; font-size:12px; font-weight:500; letter-spacing:0.08em; border-radius:4px; white-space:nowrap; border:1px solid rgba(255,255,255,0.3);">
+            Messenger
+          </a>
+        </div>
+      </div>
+      <div style="flex-shrink:0; display:flex; flex-direction:column; gap:10px; min-width:200px;">
+        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:14px 18px; color:#fff; font-size:13px;">Alicante · Calpe · Benidorm</div>
+        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:14px 18px; color:#fff; font-size:13px;">Elche · Kartagena</div>
+        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:14px 18px; color:#fff; font-size:13px;">Pomoc w wynajmie samochodu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GASTRONOMIA ===================== -->
+<section class="guide-section">
+  <div class="container">
+    <div class="gastro-callout">
+      <img src="zdjęcia/caldero.jpg" alt="Caldero" style="width:100%;max-width:480px;border-radius:12px;margin:0 auto 32px;display:block;object-fit:cover;aspect-ratio:4/3;">
+      <span class="guide-section-eyebrow" style="display:block; margin-bottom:8px;" data-pl="Smaki regionu" data-en="Regional flavours" data-es="Sabores de la región">Smaki regionu</span>
+      <h2 data-pl="Spróbuj caldero — dumy Costa Cálida" data-en="Try caldero — the pride of Costa Cálida" data-es="Prueba el caldero — el orgullo de la Costa Cálida">Spróbuj caldero — dumy Costa Cálida</h2>
+      <p data-pl="Tradycyjne danie rybackie z ryżu i świeżych ryb, przyrządzane w glinianym garnku. Najlepiej smakuje na tarasie z widokiem na morze w jednej z restauracji w Cabo de Palos lub w samym Los Alcázares. Koniecznie spróbuj też aroz con bogavante — ryżu z homarem." data-en="A traditional fishermen's dish of rice and fresh fish, cooked in a clay pot. Best enjoyed on a terrace overlooking the sea in one of the restaurants in Cabo de Palos or Los Alcázares. Don't miss arroz con bogavante — rice with lobster." data-es="Un plato tradicional de pescadores con arroz y pescado fresco, cocinado en una cazuela de barro. Se disfruta mejor en una terraza con vistas al mar en Cabo de Palos o Los Alcázares. No te pierdas el arroz con bogavante.">Tradycyjne danie rybackie z ryżu i świeżych ryb, przyrządzane w glinianym garnku. Najlepiej smakuje na tarasie z widokiem na morze w jednej z restauracji w Cabo de Palos lub w samym Los Alcázares. Koniecznie spróbuj też aroz con bogavante — ryżu z homarem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="kontakt">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand-block">
+        <span class="footer-brand-name">Lux Apartament<br><em>Sunny Spain</em></span>
+        <p class="footer-brand-tagline" data-pl="Apartament nad morzem w Los Alcázares, Hiszpania." data-en="Seaside apartment in Los Alcázares, Spain." data-es="Apartamento junto al mar en Los Alcázares, España.">Apartament nad morzem w Los Alcázares, Hiszpania.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="footer-col-title">Kontakt</span>
+          <p>Marta Jachym</p>
+          <p>Licencja turystyczna: VV. MU. 6465-1</p>
+          <a href="https://wa.me/48603768661">tel. +48 603 768 661</a>
+          <div class="footer-inline-links">
+            <a href="https://m.me/61567027174427" target="_blank" rel="noopener">Messenger</a>
+            <span>|</span>
+            <a href="https://www.facebook.com/profile.php?id=61567027174427" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Adres</span>
+          <p>Av. Radio Baliza Oscar, 4</p>
+          <p>30710 Los Alcázares</p>
+          <p>Murcja, Hiszpania</p>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Nawigacja</span>
+          <a href="index.html">Strona główna</a>
+          <a href="index.html#galeria">Galeria</a>
+          <a href="index.html#udogodnienia">Udogodnienia</a>
+          <a href="index.html#rezerwacja">Rezerwacja</a>
+          <a href="przewodnik.html">Przewodnik</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lux Apartament — Sunny Spain · Marta Jachym</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

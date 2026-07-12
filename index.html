@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lux Apartament · Sunny Spain — Los Alcázares</title>
+  <meta name="description" content="Piękny apartament nad morzem w Los Alcázares, Hiszpania. 50 metrów od plaży, 2 sypialnie, 2 baseny, do 6 osób. Psy mile widziane. Rezerwacje bezpośrednio u Marty.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner container">
+    <a href="#" class="nav-logo">
+      Lux Apartament <em>· Sunny Spain</em>
+    </a>
+    <div class="nav-links">
+      <a href="#apartament" data-pl="Apartament" data-en="Apartment" data-es="Apartamento">Apartament</a>
+      <a href="#galeria" data-pl="Galeria" data-en="Gallery" data-es="Galería">Galeria</a>
+      <a href="#udogodnienia" data-pl="Udogodnienia" data-en="Amenities" data-es="Comodidades">Udogodnienia</a>
+      <a href="#okolica" data-pl="Okolica" data-en="Area" data-es="Entorno">Okolica</a>
+      <a href="przewodnik.html" data-pl="Przewodnik" data-en="Guide" data-es="Guía">Przewodnik</a>
+      <a href="#rezerwacja" data-pl="Rezerwacja" data-en="Booking" data-es="Reservas">Rezerwacja</a>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang-btn="pl">PL</button>
+      <button class="lang-btn" data-lang-btn="en">EN</button>
+      <button class="lang-btn" data-lang-btn="es">ES</button>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#apartament" data-pl="Apartament" data-en="Apartment" data-es="Apartamento">Apartament</a>
+    <a href="#galeria" data-pl="Galeria" data-en="Gallery" data-es="Galería">Galeria</a>
+    <a href="#udogodnienia" data-pl="Udogodnienia" data-en="Amenities" data-es="Comodidades">Udogodnienia</a>
+    <a href="#okolica" data-pl="Okolica" data-en="Area" data-es="Entorno">Okolica</a>
+    <a href="przewodnik.html" data-pl="Przewodnik" data-en="Guide" data-es="Guía">Przewodnik</a>
+    <a href="#rezerwacja" data-pl="Rezerwacja" data-en="Booking" data-es="Reservas">Rezerwacja</a>
+    <a href="https://wa.me/48603768661" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-img" style="background-image: url('zdjęcia/hero_apartamenty.jpg'); background-size: cover; background-position: center;"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Centered logo name in photo -->
+  <div class="hero-center-logo">
+    <h1>Lux Apartament</h1>
+    <p>Sunny Spain · Los Alcázares</p>
+  </div>
+
+  <!-- Bottom content -->
+  <div class="hero-bottom container">
+    <div class="hero-bottom-inner">
+      <div>
+        <p class="hero-location" data-pl="Los Alcázares · Costa Cálida · Hiszpania" data-en="Los Alcázares · Costa Cálida · Spain" data-es="Los Alcázares · Costa Cálida · España">Los Alcázares · Costa Cálida · Hiszpania</p>
+        <h2 class="hero-title" style="color:#fff; font-size:clamp(1.4rem,3vw,2.2rem);" data-pl="Apartament nad morzem" data-en="Apartment by the sea" data-es="Apartamento junto al mar">
+          Apartament nad morzem
+        </h2>
+        <p class="hero-sub" data-pl="50 metrów od plaży &nbsp;·&nbsp; 2 sypialnie &nbsp;·&nbsp; do 6 osób &nbsp;·&nbsp; psy mile widziane" data-en="50 metres from the beach &nbsp;·&nbsp; 2 bedrooms &nbsp;·&nbsp; up to 6 guests &nbsp;·&nbsp; pets welcome" data-es="50 metros de la playa &nbsp;·&nbsp; 2 habitaciones &nbsp;·&nbsp; hasta 6 personas &nbsp;·&nbsp; mascotas bienvenidas">50 metrów od plaży &nbsp;·&nbsp; 2 sypialnie &nbsp;·&nbsp; do 6 osób &nbsp;·&nbsp; psy mile widziane</p>
+        <div style="margin-top:24px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="#rezerwacja" class="btn btn-dark" data-pl="Sprawdź dostępność" data-en="Check availability" data-es="Consultar disponibilidad">Sprawdź dostępność</a>
+          <a href="#kontakt" class="btn btn-outline-white" data-pl="Kontakt" data-en="Contact" data-es="Contacto">Kontakt</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span data-pl="Przewiń" data-en="Scroll" data-es="Deslizar">Przewiń</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WELCOME (Bienvenue style) ===================== -->
+<section class="welcome" id="apartament">
+  <div class="container--narrow">
+    <span class="label" data-pl="O apartamencie" data-en="About the apartment" data-es="El apartamento">O apartamencie</span>
+    <h2 data-pl="Apartament przy morzu<br>w Los Alcázares" data-en="Seaside apartment<br>in Los Alcázares" data-es="Apartamento junto al mar<br>en Los Alcázares">Apartament przy morzu<br>w Los Alcázares</h2>
+    <p data-pl="Lux Apartament to wyjątkowe miejsce na Costa Cálida — tam gdzie słońce, ciepłe morze i prawdziwy wakacyjny spokój. Obiekt położony jest zaledwie 50 metrów od piaszczystych plaż, w kompleksie z dwoma basenami i pięknie zagospodarowanym ogrodem." data-en="Lux Apartament is a unique place on the Costa Cálida — where sunshine, warm sea and true holiday tranquillity await. Just 50 metres from sandy beaches, within a complex with two pools and a beautiful garden." data-es="Lux Apartament es un lugar único en la Costa Cálida — donde el sol, el mar cálido y la auténtica tranquilidad vacacional te esperan. A solo 50 metros de las playas de arena, en un complejo con dos piscinas y un hermoso jardín.">
+      Lux Apartament to wyjątkowe miejsce na Costa Cálida — tam gdzie słońce,
+      ciepłe morze i prawdziwy wakacyjny spokój. Obiekt położony jest zaledwie
+      50 metrów od piaszczystych plaż, w kompleksie z dwoma basenami
+      i pięknie zagospodarowanym ogrodem.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PHOTO GRID (Le Bar / Le Lounge style) ===================== -->
+<div class="gallery-section section--tight" id="galeria">
+  <div class="gallery-wrapper">
+    <button class="gallery-btn gallery-btn--prev" id="galleryPrev" aria-label="Poprzednie">&#8592;</button>
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/salon z jadalnią.jpg" alt="Salon z jadalnią"></div>
+        <span class="photo-grid-label" data-pl="Salon z jadalnią" data-en="Living & dining room" data-es="Salón comedor">Salon z jadalnią</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/sypialnia.jpg" alt="Sypialnia"></div>
+        <span class="photo-grid-label" data-pl="Sypialnia" data-en="Bedroom" data-es="Dormitorio">Sypialnia</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/sypialnia2.jpg" alt="Druga sypialnia"></div>
+        <span class="photo-grid-label" data-pl="Druga sypialnia" data-en="Second bedroom" data-es="Segundo dormitorio">Druga sypialnia</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/salon.jpg" alt="Salon"></div>
+        <span class="photo-grid-label" data-pl="Salon" data-en="Living room" data-es="Salón">Salon</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/kuchnia.jpg" alt="Kuchnia"></div>
+        <span class="photo-grid-label" data-pl="Kuchnia" data-en="Kitchen" data-es="Cocina">Kuchnia</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/łazienka1.jpg" alt="Łazienka"></div>
+        <span class="photo-grid-label" data-pl="Łazienka" data-en="Bathroom" data-es="Baño">Łazienka</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/mieszkanie1.jpg" alt="Apartament"></div>
+        <span class="photo-grid-label" data-pl="Apartament" data-en="Apartment" data-es="Apartamento">Apartament</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/balkon.jpg" alt="Balkon"></div>
+        <span class="photo-grid-label" data-pl="Balkon" data-en="Balcony" data-es="Balcón">Balkon</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/ogród2.jpg" alt="Ogród i basen"></div>
+        <span class="photo-grid-label" data-pl="Ogród i basen" data-en="Garden &amp; pool" data-es="Jardín y piscina">Ogród i basen</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/okolica.jpg" alt="Okolica apartamentu"></div>
+        <span class="photo-grid-label" data-pl="Okolica apartamentu" data-en="Surroundings" data-es="Alrededores">Okolica apartamentu</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/okolica2.jpg" alt="Okolica apartamentu"></div>
+        <span class="photo-grid-label" data-pl="Okolica apartamentu" data-en="Surroundings" data-es="Alrededores">Okolica apartamentu</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/okolica4.jpg" alt="Okolica apartamentu"></div>
+        <span class="photo-grid-label" data-pl="Okolica apartamentu" data-en="Surroundings" data-es="Alrededores">Okolica apartamentu</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/okolica 5.jpg" alt="Okolica apartamentu"></div>
+        <span class="photo-grid-label" data-pl="Okolica apartamentu" data-en="Surroundings" data-es="Alrededores">Okolica apartamentu</span>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img"><img src="zdjęcia/okolica6.jpg" alt="Okolica apartamentu"></div>
+        <span class="photo-grid-label" data-pl="Okolica apartamentu" data-en="Surroundings" data-es="Alrededores">Okolica apartamentu</span>
+      </div>
+    </div>
+    <button class="gallery-btn gallery-btn--next" id="galleryNext" aria-label="Następne">&#8594;</button>
+  </div>
+</div>
+
+<!-- ===================== ALT 1: Udogodnienia ===================== -->
+<div class="alt-section" id="udogodnienia">
+  <div class="alt-text">
+    <span class="label" data-pl="Wyposażenie" data-en="Amenities" data-es="Servicios">Wyposażenie</span>
+    <h2 data-pl="Wszystko,<br>czego potrzebujesz" data-en="Everything<br>you need" data-es="Todo lo que<br>necesitas">Wszystko,<br>czego potrzebujesz</h2>
+    <p data-pl="Apartament jest w pełni wyposażony i gotowy na Twój przyjazd.<br>Nie musisz zabierać nic poza dobrym humorem." data-en="The apartment is fully equipped and ready for your arrival.<br>You don't need to bring anything but good spirits." data-es="El apartamento está completamente equipado y listo para tu llegada.<br>No necesitas traer nada más que buen humor.">
+      Apartament jest w pełni wyposażony i gotowy na Twój przyjazd.<br>
+      Nie musisz zabierać nic poza dobrym humorem.
+    </p>
+    <div class="amenities-list">
+      <div class="amenity-item"><span data-pl="50m od morza" data-en="50m from the sea" data-es="50m del mar">50m od morza</span></div>
+      <div class="amenity-item"><span data-pl="Dwa baseny" data-en="Two pools" data-es="Dos piscinas">Dwa baseny</span></div>
+      <div class="amenity-item"><span data-pl="Parking gratis" data-en="Free parking" data-es="Parking gratuito">Parking gratis</span></div>
+      <div class="amenity-item"><span data-pl="2 sypialnie" data-en="2 bedrooms" data-es="2 habitaciones">2 sypialnie</span></div>
+      <div class="amenity-item"><span data-pl="Wyposażona kuchnia" data-en="Fully equipped kitchen" data-es="Cocina equipada">Wyposażona kuchnia</span></div>
+      <div class="amenity-item"><span data-pl="Łazienka z wanną" data-en="Bathroom with bath" data-es="Baño con bañera">Łazienka z wanną</span></div>
+      <div class="amenity-item"><span>WiFi</span></div>
+      <div class="amenity-item"><span data-pl="Pralka" data-en="Washing machine" data-es="Lavadora">Pralka</span></div>
+      <div class="amenity-item"><span data-pl="Dwa balkony" data-en="Two balconies" data-es="Dos balcones">Dwa balkony</span></div>
+      <div class="amenity-item"><span data-pl="Akcesoria plażowe" data-en="Beach equipment" data-es="Accesorios de playa">Akcesoria plażowe</span></div>
+      <div class="amenity-item"><span data-pl="Pościel i ręczniki" data-en="Bed linen &amp; towels" data-es="Ropa de cama y toallas">Pościel i ręczniki</span></div>
+      <div class="amenity-item"><span data-pl="Psy mile widziane" data-en="Pets welcome" data-es="Mascotas bienvenidas">Psy mile widziane</span></div>
+    </div>
+    <div style="margin-top:32px;">
+      <a href="#rezerwacja" class="btn btn-outline" data-pl="Sprawdź dostępność" data-en="Check availability" data-es="Consultar disponibilidad">Sprawdź dostępność</a>
+    </div>
+  </div>
+  <div class="alt-img" style="min-height:520px;">
+    <img src="zdjęcia/ogrody.jpg" alt="Ogród i baseny" style="width:100%;height:100%;object-fit:cover;">
+  </div>
+</div>
+
+<!-- ===================== ALT 2: Usługi extra ===================== -->
+<div class="alt-section alt-section--reverse">
+  <div class="alt-text alt-text--gray">
+    <span class="label" data-pl="Na życzenie" data-en="On request" data-es="A petición">Na życzenie</span>
+    <h2 data-pl="Więcej niż nocleg" data-en="More than a stay" data-es="Más que un alojamiento">Więcej niż nocleg</h2>
+    <p data-pl="Aby Twój pobyt w naszym apartamencie przebiegał bez stresu, możemy zaoferować Ci dodatkowe usługi:" data-en="To make your stay as stress-free as possible, we can offer additional services:" data-es="Para que tu estancia sea lo más cómoda posible, podemos ofrecerte servicios adicionales:">
+      Aby Twój pobyt w naszym apartamencie przebiegał bez stresu,
+      możemy zaoferować Ci dodatkowe usługi:
+    </p>
+    <p data-pl="<strong style='color:var(--text-dark); font-weight:500;'>Transfer z lotniska Alicante</strong><br>Odbiór z lotniska i transfer bezpośrednio do apartamentu." data-en="<strong style='color:var(--text-dark); font-weight:500;'>Transfer from Alicante Airport</strong><br>Airport pickup and direct transfer to the apartment." data-es="<strong style='color:var(--text-dark); font-weight:500;'>Traslado desde el Aeropuerto de Alicante</strong><br>Recogida en el aeropuerto y traslado directo al apartamento.">
+      <strong style="color:var(--text-dark); font-weight:500;">Transfer z lotniska Alicante</strong><br>
+      Odbiór z lotniska i transfer bezpośrednio do apartamentu.
+    </p>
+    <p data-pl="<strong style='color:var(--text-dark); font-weight:500;'>Wynajem samochodu</strong><br>Możliwość zorganizowania wynajmu auta na miejscu." data-en="<strong style='color:var(--text-dark); font-weight:500;'>Car rental</strong><br>We can help arrange a car rental on site." data-es="<strong style='color:var(--text-dark); font-weight:500;'>Alquiler de coche</strong><br>Podemos ayudar a organizar el alquiler de un coche.">
+      <strong style="color:var(--text-dark); font-weight:500;">Wynajem samochodu</strong><br>
+      Możliwość zorganizowania wynajmu auta na miejscu.
+    </p>
+    <p data-pl="<strong style='color:var(--text-dark); font-weight:500;'>Wycieczki z polskim przewodnikiem</strong><br>Alicante, Calpe, Benidorm, Elche i Kartagena." data-en="<strong style='color:var(--text-dark); font-weight:500;'>Tours with a Polish-speaking guide</strong><br>Alicante, Calpe, Benidorm, Elche and Cartagena." data-es="<strong style='color:var(--text-dark); font-weight:500;'>Excursiones con guía de habla polaca</strong><br>Alicante, Calpe, Benidorm, Elche y Cartagena.">
+      <strong style="color:var(--text-dark); font-weight:500;">Wycieczki z polskim przewodnikiem</strong><br>
+      Alicante, Calpe, Benidorm, Elche i Kartagena.
+    </p>
+    <div style="margin-top:8px;">
+      <a href="#rezerwacja" class="btn btn-outline" data-pl="Zapytaj o szczegóły" data-en="Ask for details" data-es="Solicitar información">Zapytaj o szczegóły</a>
+    </div>
+  </div>
+  <div class="alt-img" style="min-height:480px;">
+    <img src="zdjęcia/alicante.jpg" alt="Alicante" style="width:100%;height:100%;object-fit:cover;">
+  </div>
+</div>
+
+<!-- ===================== OKOLICA / REGION ===================== -->
+<section class="section region-section" id="okolica">
+  <div class="container">
+    <div class="region-grid">
+
+      <!-- Text left -->
+      <div class="region-text">
+        <span class="label" data-pl="Okolica" data-en="Area" data-es="Entorno">Okolica</span>
+        <h2 data-pl="Odkryj Costa Cálida" data-en="Discover Costa Cálida" data-es="Descubre la Costa Cálida">Odkryj Costa Cálida</h2>
+        <p data-pl="Los Alcázares leży nad słynnym <strong style='color:var(--text-dark);font-weight:500;'>Mar Menor</strong> — ciepłym, spokojnym zalewem oddzielonym od Morza Śródziemnego przez wąski półwysep La Manga. Ponad 300 słonecznych dni w roku, płytkie morze i piaszczyste plaże." data-en="Los Alcázares sits on the famous <strong style='color:var(--text-dark);font-weight:500;'>Mar Menor</strong> — a warm, calm lagoon separated from the Mediterranean by the narrow La Manga peninsula. Over 300 sunny days a year, shallow waters and sandy beaches." data-es="Los Alcázares se encuentra junto al famoso <strong style='color:var(--text-dark);font-weight:500;'>Mar Menor</strong> — una laguna cálida y tranquila separada del Mediterráneo por la estrecha península de La Manga. Más de 300 días de sol al año, aguas poco profundas y playas de arena.">Los Alcázares leży nad słynnym <strong style="color:var(--text-dark);font-weight:500;">Mar Menor</strong> — ciepłym, spokojnym zalewem oddzielonym od Morza Śródziemnego przez wąski półwysep La Manga. Ponad 300 słonecznych dni w roku, płytkie morze i piaszczyste plaże.</p>
+        <div class="destination-list">
+          <div class="destination-item">
+            <span class="destination-name" data-pl="Plaża" data-en="Beach" data-es="Playa">Plaża</span>
+            <span class="destination-dist">50 m</span>
+          </div>
+          <div class="destination-item">
+            <span class="destination-name">Lotnisko Alicante (ALC)</span>
+            <span class="destination-dist">~45 min</span>
+          </div>
+          <div class="destination-item">
+            <span class="destination-name">Cartagena</span>
+            <span class="destination-dist">~25 min</span>
+          </div>
+          <div class="destination-item">
+            <span class="destination-name">Murcia</span>
+            <span class="destination-dist">~40 min</span>
+          </div>
+          <div class="destination-item">
+            <span class="destination-name">Alicante</span>
+            <span class="destination-dist">~45 min</span>
+          </div>
+          <div class="destination-item">
+            <span class="destination-name" data-pl="Walencja" data-en="Valencia" data-es="Valencia">Walencja</span>
+            <span class="destination-dist">~2 h</span>
+          </div>
+        </div>
+        <div style="margin-top:32px;">
+          <a href="przewodnik.html" class="btn btn-outline"
+             data-pl="Odkryj przewodnik turystyczny →"
+             data-en="Explore the travel guide →"
+             data-es="Descubre la guía turística →">Odkryj przewodnik turystyczny →</a>
+        </div>
+      </div>
+
+      <!-- Google Maps embed -->
+      <div class="region-map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=Av.+Radio+Baliza+Oscar,+4,+30710+Los+Alcazares,+Murcia,+Spain&hl=pl&z=16&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Los Alcázares, Murcia">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REZERWACJA ===================== -->
+<section class="booking-section" id="rezerwacja">
+  <div class="container">
+
+    <div class="booking-head">
+      <span class="label" data-pl="Rezerwacja" data-en="Booking" data-es="Reservas">Rezerwacja</span>
+      <h2 data-pl="Sprawdź dostępność<br>i zapytaj o termin" data-en="Check availability<br>and enquire about dates" data-es="Consulta disponibilidad<br>y solicita fechas">Sprawdź dostępność<br>i zapytaj o termin</h2>
+    </div>
+
+    <div class="booking-grid">
+
+      <!-- KALENDARZ -->
+      <!-- ABY AKTYWOWAĆ: Marta → Google Calendar → Ustawienia kalendarza → "Udostępnianie i integruj" → skopiuj src z iframe i wklej poniżej -->
+      <div class="booking-col booking-col--calendar">
+        <h3 data-pl="Dostępne terminy" data-en="Available dates" data-es="Fechas disponibles">Dostępne terminy</h3>
+        <p data-pl="Zajęte dni są zaznaczone w kalendarzu — wolne terminy możesz zarezerwować formularzem obok." data-en="Occupied days are marked on the calendar — you can book free dates using the form." data-es="Los días ocupados están marcados en el calendario — puedes reservar las fechas libres con el formulario.">Zajęte dni są zaznaczone w kalendarzu — wolne terminy możesz zarezerwować formularzem obok.</p>
+        <div class="mock-calendar">
+          <div class="mock-cal-header">
+            <button class="mock-cal-nav" disabled>‹</button>
+            <span class="mock-cal-month">Lipiec 2026</span>
+            <button class="mock-cal-nav" disabled>›</button>
+          </div>
+          <div class="mock-cal-grid">
+            <div class="mock-cal-day-label" data-pl="Pn" data-en="Mo" data-es="Lu">Pn</div>
+            <div class="mock-cal-day-label" data-pl="Wt" data-en="Tu" data-es="Ma">Wt</div>
+            <div class="mock-cal-day-label" data-pl="Śr" data-en="We" data-es="Mi">Śr</div>
+            <div class="mock-cal-day-label" data-pl="Cz" data-en="Th" data-es="Ju">Cz</div>
+            <div class="mock-cal-day-label" data-pl="Pt" data-en="Fr" data-es="Vi">Pt</div>
+            <div class="mock-cal-day-label" data-pl="Sb" data-en="Sa" data-es="Sá">Sb</div>
+            <div class="mock-cal-day-label" data-pl="Nd" data-en="Su" data-es="Do">Nd</div>
+            <!-- tydzień 1: 1 = środa -->
+            <div class="mock-cal-empty"></div>
+            <div class="mock-cal-empty"></div>
+            <div class="mock-cal-d occupied">1</div>
+            <div class="mock-cal-d occupied">2</div>
+            <div class="mock-cal-d occupied">3</div>
+            <div class="mock-cal-d occupied">4</div>
+            <div class="mock-cal-d occupied">5</div>
+            <!-- tydzień 2: 6–12 wolne -->
+            <div class="mock-cal-d free">6</div>
+            <div class="mock-cal-d free">7</div>
+            <div class="mock-cal-d free">8</div>
+            <div class="mock-cal-d free">9</div>
+            <div class="mock-cal-d free">10</div>
+            <div class="mock-cal-d free">11</div>
+            <div class="mock-cal-d free">12</div>
+            <!-- tydzień 3: 13–18 wolne, 19 zajęty -->
+            <div class="mock-cal-d free">13</div>
+            <div class="mock-cal-d free">14</div>
+            <div class="mock-cal-d free">15</div>
+            <div class="mock-cal-d free">16</div>
+            <div class="mock-cal-d free">17</div>
+            <div class="mock-cal-d free">18</div>
+            <div class="mock-cal-d occupied">19</div>
+            <!-- tydzień 4: 20–26 zajęte -->
+            <div class="mock-cal-d occupied">20</div>
+            <div class="mock-cal-d occupied">21</div>
+            <div class="mock-cal-d occupied">22</div>
+            <div class="mock-cal-d occupied">23</div>
+            <div class="mock-cal-d occupied">24</div>
+            <div class="mock-cal-d occupied">25</div>
+            <div class="mock-cal-d occupied">26</div>
+            <!-- tydzień 5: 27–31 -->
+            <div class="mock-cal-d occupied">27</div>
+            <div class="mock-cal-d occupied">28</div>
+            <div class="mock-cal-d occupied">29</div>
+            <div class="mock-cal-d occupied">30</div>
+            <div class="mock-cal-d occupied">31</div>
+            <div class="mock-cal-empty"></div>
+            <div class="mock-cal-empty"></div>
+          </div>
+          <div class="mock-cal-legend">
+            <span class="mock-cal-legend-item"><span class="mock-cal-dot free-dot"></span><span data-pl="Wolne" data-en="Available" data-es="Libre">Wolne</span></span>
+            <span class="mock-cal-legend-item"><span class="mock-cal-dot occupied-dot"></span><span data-pl="Zajęte" data-en="Occupied" data-es="Ocupado">Zajęte</span></span>
+          </div>
+        </div>
+        <div class="form-direct-contact">
+          <p data-pl="Masz pytania? Napisz!" data-en="Have questions? Write to us!" data-es="¿Tienes preguntas? ¡Escríbenos!">Masz pytania? Napisz!</p>
+          <div class="form-direct-btns">
+            <a href="https://wa.me/48603768661" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://m.me/61567027174427" class="btn btn-messenger" target="_blank" rel="noopener">Messenger</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARZ -->
+      <div class="booking-col">
+        <h3 data-pl="Wyślij zapytanie" data-en="Send enquiry" data-es="Enviar consulta">Wyślij zapytanie</h3>
+        <p data-pl="Podaj preferowane daty i liczbę osób — odpowiedź w ciągu 24 godzin." data-en="Provide preferred dates and number of guests — we'll respond within 24 hours." data-es="Indica las fechas preferidas y el número de personas — respondemos en 24 horas.">Podaj preferowane daty i liczbę osób — odpowiedź w ciągu 24 godzin.</p>
+
+        <form class="booking-form" id="bookingForm" action="https://formspree.io/f/TWOJE_FORMSPREE_ID" method="POST" novalidate>
+          <div class="form-group">
+            <label for="name" data-pl="Imię i nazwisko *" data-en="Full name *" data-es="Nombre y apellidos *">Imię i nazwisko *</label>
+            <input type="text" id="name" name="name" required placeholder="Anna Kowalska">
+          </div>
+          <div class="form-row--2">
+            <div class="form-group">
+              <label for="date-from" data-pl="Przyjazd *" data-en="Arrival *" data-es="Llegada *">Przyjazd *</label>
+              <input type="date" id="date-from" name="data_przyjazdu" required>
+            </div>
+            <div class="form-group">
+              <label for="date-to" data-pl="Wyjazd *" data-en="Departure *" data-es="Salida *">Wyjazd *</label>
+              <input type="date" id="date-to" name="data_wyjazdu" required>
+            </div>
+          </div>
+          <div class="form-row--2">
+            <div class="form-group">
+              <label for="guests" data-pl="Liczba osób *" data-en="Number of guests *" data-es="Número de personas *">Liczba osób *</label>
+              <select id="guests" name="liczba_osob" required>
+                <option value="" data-pl="Wybierz" data-en="Select" data-es="Seleccionar">Wybierz</option>
+                <option value="1" data-pl="1 osoba" data-en="1 person" data-es="1 persona">1 osoba</option>
+                <option value="2" data-pl="2 osoby" data-en="2 people" data-es="2 personas">2 osoby</option>
+                <option value="3" data-pl="3 osoby" data-en="3 people" data-es="3 personas">3 osoby</option>
+                <option value="4" data-pl="4 osoby" data-en="4 people" data-es="4 personas">4 osoby</option>
+                <option value="5" data-pl="5 osób" data-en="5 people" data-es="5 personas">5 osób</option>
+                <option value="6" data-pl="6 osób" data-en="6 people" data-es="6 personas">6 osób</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pets" data-pl="Przyjeżdżasz z psem?" data-en="Travelling with a dog?" data-es="¿Viajas con perro?">Przyjeżdżasz z psem?</label>
+              <select id="pets" name="pies">
+                <option value="nie" data-pl="Nie" data-en="No" data-es="No">Nie</option>
+                <option value="tak" data-pl="Tak" data-en="Yes" data-es="Sí">Tak</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone" data-pl="Telefon / WhatsApp *" data-en="Phone / WhatsApp *" data-es="Teléfono / WhatsApp *">Telefon / WhatsApp *</label>
+            <input type="tel" id="phone" name="telefon" required placeholder="+48 600 000 000">
+          </div>
+          <div class="form-group">
+            <label for="message" data-pl="Wiadomość (opcjonalnie)" data-en="Message (optional)" data-es="Mensaje (opcional)">Wiadomość (opcjonalnie)</label>
+            <textarea id="message" name="wiadomosc" rows="3" placeholder="Dodatkowe pytania, życzenia..." data-pl="Dodatkowe pytania, życzenia..." data-en="Additional questions, requests..." data-es="Preguntas adicionales, peticiones..."></textarea>
+          </div>
+
+          <p class="form-error" id="formError"></p>
+          <button type="submit" class="btn btn-dark btn-full" id="submitBtn">Wyślij zapytanie</button>
+        </form>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <span class="form-success-icon">✓</span>
+          <h3 data-pl="Wysłano!" data-en="Sent!" data-es="¡Enviado!">Wysłano!</h3>
+          <p data-pl="Marta odezwie się do Ciebie najszybciej jak to możliwe." data-en="Marta will get back to you as soon as possible." data-es="Marta se pondrá en contacto contigo lo antes posible.">Marta odezwie się do Ciebie najszybciej jak to możliwe.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER / KONTAKT ===================== -->
+<footer class="footer" id="kontakt">
+  <div class="container">
+
+    <div class="footer-main">
+
+      <div class="footer-brand-block">
+        <span class="footer-brand-name">Lux Apartament<br><em>Sunny Spain</em></span>
+        <p class="footer-brand-tagline" data-pl="Apartament nad morzem w Los Alcázares, Hiszpania." data-en="Seaside apartment in Los Alcázares, Spain." data-es="Apartamento junto al mar en Los Alcázares, España.">Apartament nad morzem w Los Alcázares, Hiszpania.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="footer-col-title" data-pl="Kontakt" data-en="Contact" data-es="Contacto">Kontakt</span>
+          <p>Marta Jachym</p>
+          <p>Licencja turystyczna: VV. MU. 6465-1</p>
+          <a href="https://wa.me/48603768661">tel. +48 603 768 661</a>
+          <div class="footer-inline-links">
+            <a href="https://m.me/61567027174427" target="_blank" rel="noopener">Messenger</a>
+            <span>|</span>
+            <a href="https://www.facebook.com/profile.php?id=61567027174427" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title" data-pl="Adres" data-en="Address" data-es="Dirección">Adres</span>
+          <p>Av. Radio Baliza Oscar, 4</p>
+          <p>30710 Los Alcázares</p>
+          <p data-pl="Murcja, Hiszpania" data-en="Murcia, Spain" data-es="Murcia, España">Murcja, Hiszpania</p>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title" data-pl="Nawigacja" data-en="Navigation" data-es="Navegación">Nawigacja</span>
+          <a href="#apartament" data-pl="Apartament" data-en="Apartment" data-es="Apartamento">Apartament</a>
+          <a href="#galeria" data-pl="Galeria" data-en="Gallery" data-es="Galería">Galeria</a>
+          <a href="#udogodnienia" data-pl="Udogodnienia" data-en="Amenities" data-es="Comodidades">Udogodnienia</a>
+          <a href="#okolica" data-pl="Okolica" data-en="Area" data-es="Entorno">Okolica</a>
+          <a href="#rezerwacja" data-pl="Rezerwacja" data-en="Booking" data-es="Reservas">Rezerwacja</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Lux Apartament — Sunny Spain · Marta Jachym</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
