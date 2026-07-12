@@ -266,7 +266,24 @@ p { color: var(--text); font-size: 14px; line-height: 1.85; }
   color: var(--text);
   border-bottom: 1px solid var(--border);
 }
-.nav-mobile a:last-child { border: none; margin-top: 8px; }
+.nav-mobile .btn-whatsapp { border: none; margin-top: 8px; }
+
+.nav-mobile-lang {
+  display: flex;
+  gap: 8px;
+  padding: 14px 0 4px;
+}
+.nav-mobile .nav-mobile-lang .lang-btn {
+  color: var(--text-light);
+  border-color: var(--border);
+}
+.nav-mobile .nav-mobile-lang .lang-btn.active {
+  color: var(--teal);
+  border-color: var(--teal);
+}
+.nav-mobile .nav-mobile-lang .lang-btn:hover:not(.active) {
+  color: var(--text-dark);
+}
 
 /* =============================================
    HERO
@@ -1012,8 +1029,11 @@ p { color: var(--text); font-size: 14px; line-height: 1.85; }
   .section { padding: 72px 0; }
 
   .nav-links { display: none; }
+  .lang-switcher { display: none; }
   .nav-cta-btn { display: none; }
   .nav-hamburger { display: flex; }
+
+  .gallery-item { flex: 0 0 100%; }
 
   .hero-center-logo h1 { font-size: 2.4rem; }
   .hero-bottom-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
